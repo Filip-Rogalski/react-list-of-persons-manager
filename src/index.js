@@ -71,11 +71,15 @@ class App extends Component {
     render(){
         return (
             <div>
-                <h1>Manage person list</h1>
+                <div className="row">
+                    <h1>Manage person list</h1>
+                </div>
                 <AddPersonForm getAge={this.getAge} getName={this.getName} submitHandler={this.sendPersonToList} submitEditHandler={this.updateEditedPerson} editMode={this.state.editMode}/>
                 <ResultList editModeOn={this.editModeOn} editPerson={this.editPerson} deleteItem={this.deletePersonFromList} personsData={this.state.persons}/>
-                <button className="sortBtn" onClick={this.sortPersonsByAge}>Sortuj Wiek</button>
-                <button className="sortBtn" onClick={this.sortPersonsByName}>Sortuj Nazwisko</button>
+                <div className="row">
+                    <button className="sortBtn" onClick={this.sortPersonsByAge}>Sortuj Wiek</button>
+                    <button className="sortBtn" onClick={this.sortPersonsByName}>Sortuj Nazwisko</button>
+                </div>
             </div>
         )
     }
