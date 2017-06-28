@@ -5,16 +5,16 @@ import './index.css';
 class App extends Component {
     constructor() {
         super();
-        this.sendPersonToList = this.sendPersonToList.bind(this);
-        this.deletePersonFromList = this.deletePersonFromList.bind(this);
-        this.updateEditedPerson = this.updateEditedPerson.bind(this);
-        this.sortPersonsByAge = this.sortPersonsByAge.bind(this);
-        this.clearInputs = this.clearInputs.bind(this);
-        this.sortPersonsByName = this.sortPersonsByName.bind(this);
-        this.editModeOn = this.editModeOn.bind(this);
-        this.editPerson = this.editPerson.bind(this);
         this.getName = this.getName.bind(this);
         this.getAge = this.getAge.bind(this);
+        this.sendPersonToList = this.sendPersonToList.bind(this);
+        this.deletePersonFromList = this.deletePersonFromList.bind(this);
+        this.editModeOn = this.editModeOn.bind(this);
+        this.editPerson = this.editPerson.bind(this);
+        this.updateEditedPerson = this.updateEditedPerson.bind(this);
+        this.clearInputs = this.clearInputs.bind(this);
+        this.sortPersonsByAge = this.sortPersonsByAge.bind(this);
+        this.sortPersonsByName = this.sortPersonsByName.bind(this);
         this.id = 0;
         this.state = {persons: [], newPersonsName: '', newPersonsAge: '', editMode: 'false', editedItemId: ''};
     }
@@ -40,12 +40,6 @@ class App extends Component {
         secondInput.value = '';
     }
     
-    updateEditedPerson1(e){
-        e.preventDefault();
-        this.setState({persons: this.state.persons.concat([[this.id, this.state.newPersonsName, this.state.newPersonsAge]])});
-        this.id += 1;
-    }
-        
     deletePersonFromList(e) {
         let removedItemId = parseInt(e.target.parentElement.dataset.id, 10);
         this.setState(prevState => ({ persons: prevState.persons.filter(person => person[0] !== removedItemId) }));
