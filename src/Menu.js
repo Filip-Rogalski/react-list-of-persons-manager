@@ -10,6 +10,7 @@ class Menu extends Component {
                     <li data-index='0' onClick={this.props.handler}>PersonsListManager</li>
                     <li data-index='1' onClick={this.props.handler}>Simple Slider</li>
                     <li data-index='2' onClick={this.props.handler}>Box Drag and Dropper</li>
+                    <li data-index='3' onClick={this.props.handler}>Shopping Manager</li>
                 </ol>
             </div>
         )

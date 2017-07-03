@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: lightgrey;
+}
+
+.shoppingManager h1 {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.shoppingManager .container {
+    width: calc(50% - 20px);
+    height: 150px;
+    border: 2px solid grey;
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 10px;
+    float: left;
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+
+.shoppingManager .wrapper {
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.shoppingManager .wrapper:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.shoppingManager .box {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 2px solid grey;
+    border-radius: 5px;
+    margin: 10px;
+    float: left;
+    cursor: pointer;
+}
+
+.deleteCross {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    background-color: black;
+    display: none;
+    
+}
+
+.shoppingManager .resultBox {
+    width: calc(100% - 20px);
+    height: 50px;
+    border: 2px solid grey;
+    background-color: whitesmoke;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+div.box:hover > div {
+    display: block;
+}
+
+.shoppingManager #box1 {
+    background-color: aqua;
+}
+
+.shoppingManager #box2 {
+    background-color: red;    
+}
+
+.shoppingManager #box3 {
+    background-color: yellowgreen;    
+}
+
+.shoppingManager #box4 {
+    background-color: blueviolet;    
+}
+
+.shoppingManager #box5 {
+    background-color: lightgoldenrodyellow;    
+}
