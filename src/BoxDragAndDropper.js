@@ -7,7 +7,17 @@ class BoxDragAndDropper extends Component {
         this.liftBox = this.liftBox.bind(this);
         this.dropBox = this.dropBox.bind(this);
         this.moveBox = this.moveBox.bind(this);
-        this.state = {containers: [{id: 0, boxes: ['box1', 'box2', 'box3', 'box4', 'box5']}, {id: 1, boxes: []}, {id: 2, boxes: []}, {id: 3, boxes: []}]};
+        this.boxes = ['box1', 'box2', 'box3', 'box4', 'box5'];
+        this.state = {containers: [{id: 0, boxes: []}, {id: 1, boxes: []}, {id: 2, boxes: []}, {id: 3, boxes: []}]};
+    }
+        
+    componentWillMount(){
+        
+        //Wcześniej boxes wkładałem do containers w ramach this.state. Zmieniłem na wypadek, gdybym ilość boxes wprowadzał w jakimś wcześniejszym komponencie.
+        
+        let array = this.state.containers;
+        array[0].boxes = this.boxes;
+        this.setState({containers: array});
     }
     
     liftBox(e){
