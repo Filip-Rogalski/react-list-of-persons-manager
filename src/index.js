@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Menu from './Menu';
 import SimpleSlider from './SimpleSlider';
-import PersonsListManager from './PersonsListManager'
+import PersonsListManager from './PersonsListManager';
+import BoxDragAndDropper from './BoxDragAndDropper';
 
 class App extends Component {
     constructor(){
         super();
-        this.state = {visibleProjectIndex: 1};
+        this.state = {visibleProjectIndex: 2};
         this.projectToggler = this.projectToggler.bind(this);
     }
     
@@ -21,7 +22,8 @@ class App extends Component {
             <div>
                 <Menu handler={this.projectToggler}/>
             {this.state.visibleProjectIndex === 0 && <PersonsListManager />}
-            {this.state.visibleProjectIndex === 1 && <SimpleSlider />}
+            {this.state.visibleProjectIndex === 1 && <SimpleSlider />}{this.state.visibleProjectIndex === 2 && <BoxDragAndDropper />}
+            
             </div>
         )
     }

@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: lightgrey;
+}
+
+.boxDragAndDropper h1 {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.boxDragAndDropper .container {
+    width: calc(50% - 20px);
+    height: 150px;
+    border: 2px solid grey;
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 10px;
+    float: left;
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+
+.boxDragAndDropper .wrapper {
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.boxDragAndDropper .wrapper:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.boxDragAndDropper .box {
+    width: 20px;
+    height: 20px;
+    border: 2px solid grey;
+    border-radius: 5px;
+    margin: 10px;
+    float: left;
+    cursor: pointer;
+}
+
+.boxDragAndDropper .resultBox {
+    width: calc(100% - 20px);
+    height: 50px;
+    border: 2px solid grey;
+    background-color: whitesmoke;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.boxDragAndDropper #box1 {
+    background-color: aqua;
+}
+
+.boxDragAndDropper #box2 {
+    background-color: red;    
+}
+
+.boxDragAndDropper #box3 {
+    background-color: yellowgreen;    
+}
+
+.boxDragAndDropper #box4 {
+    background-color: blueviolet;    
+}
+
+.boxDragAndDropper #box5 {
+    background-color: lightgoldenrodyellow;    
+}
