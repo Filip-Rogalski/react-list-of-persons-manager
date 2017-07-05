@@ -5,12 +5,13 @@ import Menu from './Menu';
 import SimpleSlider from './SimpleSlider';
 import PersonsListManager from './PersonsListManager';
 import BoxDragAndDropper from './BoxDragAndDropper';
-import ShoppingManager from './ShoppingManager'
+import ShoppingManager from './ShoppingManager';
+import ShoppingManager2 from './ShoppingManager2';
 
 class App extends Component {
     constructor(){
         super();
-        this.state = {visibleProjectIndex: 3};
+        this.state = {visibleProjectIndex: 4};
         this.projectToggler = this.projectToggler.bind(this);
     }
     
@@ -25,7 +26,7 @@ class App extends Component {
             {this.state.visibleProjectIndex === 0 && <PersonsListManager />}
             {this.state.visibleProjectIndex === 1 && <SimpleSlider />}{this.state.visibleProjectIndex === 2 && <BoxDragAndDropper />}
             {this.state.visibleProjectIndex === 3 && <ShoppingManager />}
-            
+            {this.state.visibleProjectIndex === 4 && <ShoppingManager2 />}
             </div>
         )
     }

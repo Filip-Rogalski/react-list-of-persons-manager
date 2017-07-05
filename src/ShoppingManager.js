@@ -12,6 +12,10 @@ class ShoppingManager extends Component {
         this.addShoppingDestination = this.addShoppingDestination.bind(this);
         this.boxes = ['box1', 'box2', 'box3', 'box4', 'box5'];
         this.state = {containers: [{id: 0, name: 'Shopping Items', boxes: []}]};
+        this.originContainer = '';
+        this.destinationContainer = '';
+        this.boxToMove = '';
+        
     }
         
     componentWillMount(){
@@ -29,7 +33,7 @@ class ShoppingManager extends Component {
     }
     
     dropBox(e) {
-        if(e.target.className === 'container') {
+        if(e.target.className === 'container' && this.originContainer !== '') {
             this.destinationContainer = e.target.dataset.number;
             if (this.originContainer !== this.destinationContainer) {
                 this.moveBox(this.boxToMove, this.originContainer, this.destinationContainer);
@@ -44,11 +48,12 @@ class ShoppingManager extends Component {
         prevArray[destination].boxes.push(box);
         let newArray = prevArray;
         this.setState({containers: newArray});
+        this.originContainer = '';
+        this.destinationContainer = '';
+        this.boxToMove = '';
     }
     
     toggleDeleteBox(e){
-        //Dopracować. Na razie załatwiam to css-em.
-//        e.target.firstChild.classList.toggle('invisible');
     }
     
     deleteBox(e){
@@ -63,7 +68,6 @@ class ShoppingManager extends Component {
     
     addShoppingDestination(e){
         e.preventDefault();
-        console.log('addShoppingDestination');
         let prevArray = this.state.containers,
             newContainerId = this.state.containers.length,
             newContainerName = e.target.parentElement.firstChild.value,
@@ -97,7 +101,7 @@ class Container extends Component {
             <div data-number={this.props.id} onMouseUp={this.props.containerHandler} className="container"><div className="containerLabel">{this.props.name}</div>
                 {this.props.boxes.map(box => (
             <div key={box} id={box} onMouseDown={this.props.boxHandler} onMouseEnter={this.props.boxHoverHandler} onMouseLeave={this.props.boxHoverHandler}
-            className="box"><div onClick={this.props.boxDeleteHandler} className="deleteCross invisible"></div></div>
+            className="box"><div onClick={this.props.boxDeleteHandler} className="deleteCross"></div></div>
         ))}
             </div>
         )
