@@ -1,0 +1,58 @@
+.row1 {
+    width: 600px;
+    height: auto;
+    margin: 0 auto;
+}
+
+
+.row1:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.settingsPanel input {
+    box-sizing: border-box;
+    width: 30%;
+    height: 20px;
+}
+
+#cellSize, #startBtn {
+    float: left;
+}
+
+#cellsPerSide, #stopBtn {
+    float: right;
+}
+
+#moveBtn {
+    display: block;
+    margin: 0 auto;
+}
+
+.antsBoard {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    margin: 0 auto;
+    box-sizing: content-box;
+    position: relative;
+}
+
+.antsCell {
+    width: 20px;
+    height: 20px;
+    border: 1px solid grey;
+    box-sizing: border-box;
+    float: left;
+}
+
+.ant {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    z-index: 3;
+    box-sizing: border-box;
+}

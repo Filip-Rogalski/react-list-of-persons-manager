@@ -11,7 +11,8 @@ class Menu extends Component {
                     <li data-index='1' onClick={this.props.handler}>Simple Slider</li>
                     <li data-index='2' onClick={this.props.handler}>Box Drag and Dropper</li>
                     <li data-index='3' onClick={this.props.handler}>Shopping Manager 1</li>
-            <li data-index='4' onClick={this.props.handler}>Shopping Manager 2</li>
+                    <li data-index='4' onClick={this.props.handler}>Shopping Manager 2</li>
+                    <li data-index='5' onClick={this.props.handler}>Langton's Ant</li>
                 </ol>
             </div>
         )
