@@ -18,15 +18,15 @@ class PersonsListManager extends Component {
         this.id = 0;
         this.state = {persons: [], newPersonsName: '', newPersonsAge: '', editMode: 'false', editedItemId: ''};
     }
-    
+
     getName(e){
         this.setState({newPersonsName: e.target.value});
     }
-    
+
     getAge(e){
         this.setState({newPersonsAge: e.target.value});
     }
-    
+
     sendPersonToList(e){
         e.preventDefault();
         const nameInput = e.target.parentElement.firstChild,
@@ -34,42 +34,42 @@ class PersonsListManager extends Component {
         this.setState({persons: this.state.persons.concat([[this.id, this.state.newPersonsName, this.state.newPersonsAge]])}, this.clearInputs(nameInput, ageInput));
         this.id += 1;
     }
-    
+
     clearInputs(firstInput, secondInput){
         firstInput.value = '';
         secondInput.value = '';
     }
-    
+
     deletePersonFromList(e) {
         let removedItemId = parseInt(e.target.parentElement.dataset.id, 10);
         this.setState(prevState => ({ persons: prevState.persons.filter(person => person[0] !== removedItemId) }));
     }
-    
+
     updateEditedPerson(e) {
         e.preventDefault();
         const nameInput = e.target.parentElement.firstChild,
             ageInput = e.target.parentElement.firstChild.nextSibling;
         this.setState(prevState => ({ persons: prevState.persons.map(person => person[0] === this.state.editedItemId ? [this.state.editedItemId, this.state.newPersonsName, this.state.newPersonsAge] : person), editMode: 'false' }), this.clearInputs(nameInput, ageInput));
     }
-    
+
     editModeOn(e) {
         this.setState({editMode: 'true', editedItemId: parseInt(e.target.parentElement.dataset.id, 10)});
     }
-    
+
     editPerson(e) {
         /* chwilowo zbędna funkcja */
         this.setState({editedItemId: parseInt(e.target.parentElement.dataset.id, 10)});
         console.log(e.target.parentElement.dataset.id);
     }
-    
+
     sortPersonsByAge(e) {
         this.setState(prevState => ({ persons: prevState.persons.sort((a,b) => a[2] - b[2]) }));
     }
-    
+
     sortPersonsByName(e) {
         this.setState(prevState => ({ persons: prevState.persons.sort((a, b) => a[1].localeCompare(b[1])) }));
     }
-    
+
     render(){
         return (
             <div>
@@ -123,7 +123,7 @@ class ResultList extends Component {
         this.displayData = this.displayData.bind(this);
         this.hideData = this.hideData.bind(this);
     }
-    
+
     displayData(e){
         ReactDOM.render(<span> Age: {e.target.parentElement.dataset.age}</span>, e.target.nextSibling);
     }
@@ -131,7 +131,7 @@ class ResultList extends Component {
     hideData(e) {
         ReactDOM.render(<span></span>, e.target.nextSibling);
     }
-    
+
     render(){
         return (
             <div className="row">
